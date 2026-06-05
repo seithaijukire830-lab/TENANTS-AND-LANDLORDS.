@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#fdb813",
+                    "surface-container-high": "#e7e8e9",
+                    "secondary": "#bb0023",
+                    "on-primary-fixed": "#271900",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "tertiary-container": "#c6c3c3",
+                    "impact-red": "#EF3340",
+                    "ink-black": "#121212",
+                    "on-error": "#ffffff",
+                    "hive-yellow": "#FDB813",
+                    "on-tertiary-container": "#515050",
+                    "on-surface": "#191c1d",
+                    "on-background": "#191c1d",
+                    "surface-container": "#edeeef",
+                    "on-surface-variant": "#504533",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-primary-fixed-variant": "#5e4200",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#6b4b00",
+                    "surface-variant": "#e1e3e4",
+                    "on-secondary-fixed": "#410006",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "outline": "#837560",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#ffbb1e",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-lowest": "#ffffff",
+                    "muted-gray": "#6C757D",
+                    "primary-fixed": "#ffdea7",
+                    "primary-fixed-dim": "#ffbb1e",
+                    "tertiary": "#5f5e5e",
+                    "surface-dim": "#d9dadb",
+                    "on-secondary-container": "#fffbff",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "outline-variant": "#d5c4ac",
+                    "primary": "#7c5800",
+                    "on-tertiary": "#ffffff",
+                    "canvas-white": "#FFFFFF",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#2e3132",
+                    "secondary-container": "#e02737",
+                    "secondary-fixed": "#ffdad8",
+                    "background": "#f8f9fa",
+                    "surface-container-low": "#f3f4f5",
+                    "surface-bright": "#f8f9fa",
+                    "surface-tint": "#7c5800",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface": "#f8f9fa",
+                    "on-secondary-fixed-variant": "#930019",
+                    "secondary-fixed-dim": "#ffb3b0",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "8px",
+                    "lg": "8px",
+                    "xl": "12px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "xl": "80px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "base": "8px",
+                    "lg": "48px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "label-xs": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chart-bar { transition: height 1s ease-out; }
+        .hover-lift:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Side Navigation Bar -->
+<aside class="bg-ink-black dark:bg-ink-black h-screen w-64 fixed left-0 top-0 shadow-lg flex flex-col py-md z-50">
+<div class="px-md mb-lg">
+<h1 class="font-headline-md text-headline-md font-bold text-hive-yellow">Kinetic Habitat</h1>
+<p class="text-canvas-white opacity-70 font-label-sm">Agent Portal</p>
+</div>
+<nav class="flex-1 px-sm space-y-base">
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-canvas-white opacity-70 hover:bg-on-primary-fixed-variant/20 hover:text-hive-yellow transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-hive-yellow border-r-4 border-hive-yellow bg-on-primary-fixed-variant/10 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md">Leads</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-canvas-white opacity-70 hover:bg-on-primary-fixed-variant/20 hover:text-hive-yellow transition-colors" href="#">
+<span class="material-symbols-outlined">home_work</span>
+<span class="font-body-md">Listings</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-canvas-white opacity-70 hover:bg-on-primary-fixed-variant/20 hover:text-hive-yellow transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-canvas-white opacity-70 hover:bg-on-primary-fixed-variant/20 hover:text-hive-yellow transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</nav>
+<div class="px-md mt-auto">
+<button class="w-full bg-hive-yellow text-ink-black font-label-sm py-sm rounded-lg font-bold hover-lift transition-all">
+                New Listing
+            </button>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<div class="ml-64 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="flex justify-between items-center px-md h-16 w-full bg-surface dark:bg-surface-dim shadow-sm sticky top-0 z-40">
+<div class="flex items-center gap-lg">
+<h2 class="font-headline-md text-headline-md text-ink-black dark:text-canvas-white">Lead Insights</h2>
+<nav class="flex gap-md">
+<a class="text-muted-gray hover:text-primary transition-colors font-label-sm" href="#">Overview</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm" href="#">Reports</a>
+<a class="text-muted-gray hover:text-primary transition-colors font-label-sm" href="#">Export</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-muted-gray">search</span>
+<input class="pl-10 pr-md py-xs bg-surface-container border-none rounded-full text-label-sm w-64 focus:ring-2 focus:ring-hive-yellow" placeholder="Search records..." type="text"/>
+</div>
+<div class="flex gap-sm text-muted-gray">
+<button class="material-symbols-outlined scale-95 transition-transform hover:text-primary">notifications</button>
+<button class="material-symbols-outlined scale-95 transition-transform hover:text-primary">help</button>
+</div>
+<img alt="Agent Avatar" class="w-10 h-10 rounded-full border-2 border-hive-yellow object-cover" data-alt="A professional portrait of a successful real estate agent in a modern glass-walled office. He is wearing a tailored charcoal suit and has a warm, confident expression. The lighting is bright and airy with soft sunlight streaming through the windows, creating a premium professional aesthetic consistent with high-end real estate branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYNqVXwbE4bhc_MreonNG6vXZEi3aIQXOXjTRgOI1LZdGJ55qT8y9vDCsSzaplEjPw5wm2dESrp1-A3TnkYSWfC2DcmabkLBdrDh4FTEC6XfWkE1vRQXhmVM_M62GoGCKUT6MKLKzLl8k1a40ViPgTqi3ymczWK8Wb6e8jUhoi21NZ3qotdhbXrPdAWNPHcErIGoswWqjkbI64MVhiB13SAkDVKVs6aEmveovJo2oTnb66_rMJC6_zJKYsZ5CQtjCuBzj3uj408NcX"/>
+</div>
+</header>
+<!-- Page Content -->
+<main class="p-md max-w-container-max mx-auto space-y-md">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-end md:items-center gap-md">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-ink-black">Lead Source Analytics</h3>
+<p class="text-muted-gray font-body-md">Detailed performance metrics for your multi-channel lead acquisition strategies.</p>
+</div>
+<div class="flex gap-sm">
+<div class="flex items-center bg-canvas-white border border-surface-container-high px-sm py-xs rounded-lg gap-sm">
+<span class="material-symbols-outlined text-muted-gray">calendar_today</span>
+<span class="font-label-sm">Oct 1, 2023 - Oct 31, 2023</span>
+</div>
+<button class="bg-ink-black text-canvas-white px-md py-sm rounded-lg font-label-sm flex items-center gap-xs hover-lift transition-all">
+<span class="material-symbols-outlined">download</span>
+                        Export CSV
+                    </button>
+</div>
+</section>
+<!-- KPI Section -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-canvas-white p-md rounded-xl shadow-[0_4px_12px_rgba(18,18,18,0.08)] border border-surface-container-high hover-lift transition-all">
+<div class="flex justify-between items-start mb-sm">
+<div class="bg-hive-yellow/10 p-sm rounded-lg text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<span class="text-green-600 bg-green-50 px-xs py-xs rounded font-label-xs font-bold">+12.5%</span>
+</div>
+<p class="text-muted-gray font-label-sm uppercase tracking-wider">Total Leads</p>
+<h4 class="font-headline-md text-headline-md text-ink-black">1,482</h4>
+</div>
+<div class="bg-canvas-white p-md rounded-xl shadow-[0_4px_12px_rgba(18,18,18,0.08)] border border-surface-container-high hover-lift transition-all">
+<div class="flex justify-between items-start mb-sm">
+<div class="bg-hive-yellow/10 p-sm rounded-lg text-primary">
+<span class="material-symbols-outlined">conversion_path</span>
+</div>
+<span class="text-green-600 bg-green-50 px-xs py-xs rounded font-label-xs font-bold">+2.1%</span>
+</div>
+<p class="text-muted-gray font-label-sm uppercase tracking-wider">Conversion Rate</p>
+<h4 class="font-headline-md text-headline-md text-ink-black">24.8%</h4>
+</div>
+<div class="bg-canvas-white p-md rounded-xl shadow-[0_4px_12px_rgba(18,18,18,0.08)] border border-surface-container-high hover-lift transition-all">
+<div class="flex justify-between items-start mb-sm">
+<div class="bg-hive-yellow/10 p-sm rounded-lg text-primary">
+<span class="material-symbols-outlined">star_rate</span>
+</div>
+<span class="text-impact-red bg-red-50 px-xs py-xs rounded font-label-xs font-bold">-0.4%</span>
+</div>
+<p class="text-muted-gray font-label-sm uppercase tracking-wider">Avg. Lead Quality</p>
+<h4 class="font-headline-md text-headline-md text-ink-black">8.4<span class="text-muted-gray text-body-md">/10</span></h4>
+</div>
+</section>
+<!-- Charts Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Source Breakdown (Bento Grid Style) -->
+<div class="lg:col-span-4 bg-canvas-white p-md rounded-xl shadow-sm border border-surface-container-high">
+<div class="flex items-center justify-between mb-lg">
+<h5 class="font-label-sm text-ink-black">Source Breakdown</h5>
+<button class="material-symbols-outlined text-muted-gray">more_vert</button>
+</div>
+<div class="relative h-64 flex items-end justify-between gap-base px-sm">
+<div class="flex flex-col items-center gap-sm flex-1">
+<div class="w-full bg-hive-yellow rounded-t-lg chart-bar" style="height: 42%;"></div>
+<span class="font-label-xs text-center text-muted-gray">Search</span>
+</div>
+<div class="flex flex-col items-center gap-sm flex-1">
+<div class="w-full bg-ink-black rounded-t-lg chart-bar" style="height: 28%;"></div>
+<span class="font-label-xs text-center text-muted-gray">Social</span>
+</div>
+<div class="flex flex-col items-center gap-sm flex-1">
+<div class="w-full bg-surface-container-highest rounded-t-lg chart-bar" style="height: 18%;"></div>
+<span class="font-label-xs text-center text-muted-gray">Direct</span>
+</div>
+<div class="flex flex-col items-center gap-sm flex-1">
+<div class="w-full bg-tertiary-container rounded-t-lg chart-bar" style="height: 12%;"></div>
+<span class="font-label-xs text-center text-muted-gray">Referral</span>
+</div>
+</div>
+<div class="mt-md space-y-sm">
+<div class="flex justify-between items-center text-label-xs">
+<span class="flex items-center gap-xs"><span class="w-2 h-2 rounded-full bg-hive-yellow"></span> Search Engines</span>
+<span class="font-bold">42%</span>
+</div>
+<div class="flex justify-between items-center text-label-xs">
+<span class="flex items-center gap-xs"><span class="w-2 h-2 rounded-full bg-ink-black"></span> Social Media</span>
+<span class="font-bold">28%</span>
+</div>
+</div>
+</div>
+<!-- Conversion Trend -->
+<div class="lg:col-span-8 bg-canvas-white p-md rounded-xl shadow-sm border border-surface-container-high flex flex-col">
+<div class="flex items-center justify-between mb-lg">
+<h5 class="font-label-sm text-ink-black">Conversion Trend: Volume vs Quality</h5>
+<div class="flex gap-md">
+<div class="flex items-center gap-xs text-label-xs"><span class="w-3 h-[2px] bg-hive-yellow"></span> Volume</div>
+<div class="flex items-center gap-xs text-label-xs"><span class="w-3 h-[2px] bg-ink-black"></span> Quality</div>
+</div>
+</div>
+<div class="flex-1 relative min-h-[250px]">
+<!-- Simple visual representation of a line chart using SVG for clean styling -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 40">
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#FDB813;stop-opacity:0.2"></stop>
+<stop offset="100%" style="stop-color:#FDB813;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,35 Q10,32 20,25 T40,15 T60,28 T80,12 T100,20" fill="none" stroke="#FDB813" stroke-width="0.8"></path>
+<path d="M0,35 Q10,32 20,25 T40,15 T60,28 T80,12 T100,20 V40 H0 Z" fill="url(#grad1)"></path>
+<path d="M0,38 Q15,35 30,30 T60,18 T90,22 T100,15" fill="none" stroke="#121212" stroke-dasharray="2,1" stroke-width="0.8"></path>
+</svg>
+<!-- Grid lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-10">
+<div class="border-b border-ink-black w-full"></div>
+<div class="border-b border-ink-black w-full"></div>
+<div class="border-b border-ink-black w-full"></div>
+<div class="border-b border-ink-black w-full"></div>
+</div>
+</div>
+<div class="flex justify-between pt-sm border-t border-surface-container mt-sm text-label-xs text-muted-gray">
+<span>WK 36</span><span>WK 37</span><span>WK 38</span><span>WK 39</span><span>WK 40</span>
+</div>
+</div>
+</section>
+<!-- Recent Leads Table -->
+<section class="bg-canvas-white rounded-xl shadow-sm border border-surface-container-high overflow-hidden">
+<div class="px-md py-md border-b border-surface-container flex justify-between items-center bg-surface-container-low/30">
+<h5 class="font-label-sm text-ink-black">Recent Leads from Search Engines</h5>
+<button class="text-primary font-label-sm hover:underline">View All Leads</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-muted-gray text-label-xs uppercase tracking-wider font-bold">
+<th class="px-md py-sm">Lead Name</th>
+<th class="px-md py-sm">Source</th>
+<th class="px-md py-sm">Quality</th>
+<th class="px-md py-sm">Status</th>
+<th class="px-md py-sm">Date</th>
+<th class="px-md py-sm text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-md py-sm">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-hive-yellow/20 flex items-center justify-center text-primary font-bold text-label-xs">JS</div>
+<div>
+<p class="font-label-sm text-ink-black">Jonathan Smith</p>
+<p class="text-label-xs text-muted-gray">jsmith.real@email.com</p>
+</div>
+</div>
+</td>
+<td class="px-md py-sm font-label-xs text-muted-gray">Google PPC</td>
+<td class="px-md py-sm">
+<span class="bg-green-100 text-green-700 px-sm py-xs rounded-full font-label-xs font-bold">High (9.2)</span>
+</td>
+<td class="px-md py-sm">
+<span class="flex items-center gap-xs text-label-xs font-medium text-ink-black">
+<span class="w-2 h-2 rounded-full bg-hive-yellow"></span> New Inbound
+                                    </span>
+</td>
+<td class="px-md py-sm text-label-xs text-muted-gray">Oct 28, 14:22</td>
+<td class="px-md py-sm text-right">
+<button class="material-symbols-outlined text-muted-gray group-hover:text-primary transition-colors">chat_bubble</button>
+<button class="material-symbols-outlined text-muted-gray group-hover:text-primary transition-colors ml-sm">open_in_new</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-md py-sm">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-ink-black/10 flex items-center justify-center text-ink-black font-bold text-label-xs">AW</div>
+<div>
+<p class="font-label-sm text-ink-black">Alice West</p>
+<p class="text-label-xs text-muted-gray">a.west92@provider.net</p>
+</div>
+</div>
+</td>
+<td class="px-md py-sm font-label-xs text-muted-gray">Bing Organic</td>
+<td class="px-md py-sm">
+<span class="bg-surface-container-high text-muted-gray px-sm py-xs rounded-full font-label-xs font-bold">Medium (6.5)</span>
+</td>
+<td class="px-md py-sm">
+<span class="flex items-center gap-xs text-label-xs font-medium text-ink-black">
+<span class="w-2 h-2 rounded-full bg-muted-gray"></span> Contacted
+                                    </span>
+</td>
+<td class="px-md py-sm text-label-xs text-muted-gray">Oct 28, 11:05</td>
+<td class="px-md py-sm text-right">
+<button class="material-symbols-outlined text-muted-gray group-hover:text-primary transition-colors">chat_bubble</button>
+<button class="material-symbols-outlined text-muted-gray group-hover:text-primary transition-colors ml-sm">open_in_new</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-md py-sm">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-hive-yellow/20 flex items-center justify-center text-primary font-bold text-label-xs">MK</div>
+<div>
+<p class="font-label-sm text-ink-black">Marcus Knight</p>
+<p class="text-label-xs text-muted-gray">m.knight.dev@gmail.com</p>
+</div>
+</div>
+</td>
+<td class="px-md py-sm font-label-xs text-muted-gray">Google Maps</td>
+<td class="px-md py-sm">
+<span class="bg-green-100 text-green-700 px-sm py-xs rounded-full font-label-xs font-bold">High (8.8)</span>
+</td>
+<td class="px-md py-sm">
+<span class="flex items-center gap-xs text-label-xs font-medium text-ink-black">
+<span class="w-2 h-2 rounded-full bg-green-600"></span> Qualified
+                                    </span>
+</td>
+<td class="px-md py-sm text-label-xs text-muted-gray">Oct 27, 09:40</td>
+<td class="px-md py-sm text-right">
+<button class="material-symbols-outlined text-muted-gray group-hover:text-primary transition-colors">chat_bubble</button>
+<button class="material-symbols-outlined text-muted-gray group-hover:text-primary transition-colors ml-sm">open_in_new</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</div>
+<!-- Micro-interaction script for chart animation -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bars = document.querySelectorAll('.chart-bar');
+            bars.forEach(bar => {
+                const targetHeight = bar.style.height;
+                bar.style.height = '0';
+                setTimeout(() => {
+                    bar.style.height = targetHeight;
+                }, 200);
+            });
+        });
+    </script>
+</body></html>
+<script>
+document.querySelectorAll('button, a[href="#"]').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    alert('Button clicked! Connect this to real action later');
+  });
+});
+</script>
